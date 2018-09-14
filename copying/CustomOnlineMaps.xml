@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<onlinemapsources>
+	<onlinemapsource id="0">
+		<name>BingMapsRoad</name>
+		<url><![CDATA[http://r{$s}.tiles.ditu.live.com/tiles/r{$q}.png?g=41]]></url>
+		<servers>0,1,2</servers>
+	</onlinemapsource>
+	<onlinemapsource id="1">
+		<name>BingMapsImagery</name>
+		<url><![CDATA[http://ecn.t{$s}.tiles.virtualearth.net/tiles/a{$q}.jpeg?g=915&mkt=en-us&n=z]]></url>
+		<servers>0,1,2,3</servers>
+	</onlinemapsource>
+	<onlinemapsource id="2">
+		<name>GoogleMapsRoad</name>
+		<url><![CDATA[http://mt{$s}.google.com/vt/lyrs=m&hl=zh-CN&gl=cn&x={$x}&y={$y}&z={$z}&s=]]></url>
+		<servers>0,1,2,3</servers>
+	</onlinemapsource>
+	<onlinemapsource id="3">
+		<name>GoogleMapsImagery</name>
+		<url><![CDATA[http://mt{$s}.google.com/vt/lyrs=s&gl=cn&x={$x}&y={$y}&z={$z}&s=]]></url>
+		<servers>0,1,2,3</servers>
+	</onlinemapsource>
+	<onlinemapsource id="4">
+		<name>OpenStreetMap</name>
+		<url><![CDATA[http://{$s}.tile.openstreetmap.org/{$z}/{$x}/{$y}.png]]></url>
+		<servers>a,b,c</servers>
+	</onlinemapsource>
+	<onlinemapsource id="5">
+		<name>GaoDeDiTuRoad</name>
+		<url><![CDATA[http://emap{$s}.is.autonavi.com/appmaptile?&x={$x}&y={$y}&z={$z}]]></url>
+		<servers>0,1,2,3</servers>
+	</onlinemapsource>
+	<onlinemapsource id="6">
+		<name>NokiaMapsRoad</name>
+		<url><![CDATA[http://{$s}.mrsmon.lbs.ovi.com.cn/maptiler/v2/maptile/6fbc312f08/normal.day/{$z}/{$x}/{$y}/256/png8?app_id=90oGXsXHT8IRMSt5D79X&token=JY0BReev8ax1gIrHZZoqIg&lg=CHI]]></url>
+		<servers>b,c,d,e,f,g,h,i,j,k</servers>
+	</onlinemapsource>
+	<onlinemapsource id="7">
+		<name>TaoBaoMap</name>
+		<url><![CDATA[http://img.ditu.aliyun.com/get_png?v=v4&x={$x}&y={$y}&z={$z}]]></url>
+		<servers></servers>
+	</onlinemapsource>
+	<onlinemapsource id="8">
+		<name>MapBoxPopulationFire</name>
+		<url><![CDATA[http://{$s}.tiles.mapbox.com/v3/aj.population-fire/{$z}/{$x}/{$y}.png]]></url>
+		<servers>a,b,c,d</servers>
+	</onlinemapsource>
+  <onlinemapsource id="9">
+    <name>360map</name>
+    <url><![CDATA[http://webrd0{$s}.is.autonavi.com/appmaptile?x={$x}&y={$y}&z={$z}&lang=zh_cn&size=1&scale=1&style=7]]></url>
+    <servers>1,2,3,4</servers>
+  </onlinemapsource>
+  <onlinemapsource id="10">
+    <name>GeoQ</name>
+    <url><![CDATA[http://www.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/{$z}/{$y}/{$x}]]></url>
+    <servers></servers>
+  </onlinemapsource>
+  <onlinemapsource id="11">
+    <name>MapBox</name>
+    <url><![CDATA[http://{$s}.tiles.mapbox.com/v3/diligentpig.map-9omksd0n/{$z}/{$x}/{$y}.png]]></url>
+    <servers>a,b,c,d</servers>
+  </onlinemapsource>
+</onlinemapsources>

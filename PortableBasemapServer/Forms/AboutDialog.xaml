@@ -1,0 +1,38 @@
+﻿<Window x:Class="PBS.APP.AboutDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About Portable Basemap Server" Height="230" Width="750" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" WindowStyle="ThreeDBorderWindow" FontFamily="Verdana">
+    <DockPanel>
+        <Image DockPanel.Dock="Left" Source="/Images/logo.png"/>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock TextAlignment="Center" FontSize="14" TextWrapping="Wrap">
+                <Run FontSize="16">multiple map data source&lt;--PBS--&gt;multiple map api</Run>
+                <LineBreak />                
+                <Run FontSize="16">version 3.0</Run>
+                <LineBreak />
+                <!--<Hyperlink NavigateUri="http://blog.newnaw.com/?p=890" RequestNavigate="Hyperlink_RequestNavigate">介绍</Hyperlink>
+                <Hyperlink NavigateUri="http://www.arcgis.com/home/item.html?id=48bf53da123e442ab8ac9aed52747552" RequestNavigate="Hyperlink_RequestNavigate">Introduction</Hyperlink>
+                <LineBreak/>-->
+                <Run>
+                    PBS on 
+                </Run>
+                    <Hyperlink NavigateUri="https://geopbs.codeplex.com/" RequestNavigate="Hyperlink_RequestNavigate">CodePlex</Hyperlink>
+                <LineBreak/>
+                <Hyperlink NavigateUri="https://geopbs.codeplex.com/wikipage?title=Donate" RequestNavigate="Hyperlink_RequestNavigate"><Image Width="82" Height="26" Source="/Images/alipaydonate.jpg" />Donate</Hyperlink>
+                <LineBreak/>
+                <LineBreak/>
+                <Run>My photoblog:</Run>
+                <Hyperlink NavigateUri="http://www.newnaw.com" RequestNavigate="Hyperlink_RequestNavigate">http://www.newnaw.com</Hyperlink>
+                <LineBreak />
+                <Run>My Blog:</Run>
+                <Hyperlink NavigateUri="http://blog.newnaw.com" RequestNavigate="Hyperlink_RequestNavigate">http://blog.newnaw.com</Hyperlink>
+                <LineBreak />
+                <Run>新浪微博:</Run>
+                <Hyperlink NavigateUri="http://weibo.com/diligentpig" RequestNavigate="Hyperlink_RequestNavigate">菩提老王</Hyperlink>                
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="btnOk" Width="80" Click="btnOk_Click">OK</Button>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

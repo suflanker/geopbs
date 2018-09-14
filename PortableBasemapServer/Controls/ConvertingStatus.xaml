@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="PBS.APP.Controls.ConvertingStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:classes="clr-namespace:PBS.APP.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="92" d:DesignWidth="635">
+    <Grid>
+        <Grid.Resources>
+            <classes:VisibilityConverter x:Key="VisibilityConverter" />
+        </Grid.Resources>
+        <StackPanel>
+            <!--first row-->
+            <Grid Background="MediumAquamarine" Height="16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbTimeElapsed}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.TimeElapsed,StringFormat={}{0:hh\\:mm\\:ss}}" />
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbTimeRemaining}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.TimeRemaining,StringFormat={}{0:hh\\:mm\\:ss}}" />
+                </StackPanel>
+                <!--<StackPanel VerticalAlignment="Center" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbThreadCount}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.ThreadCount}" />
+                </StackPanel>-->
+                <StackPanel VerticalAlignment="Center" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbEstimatedSize}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.EstimatedFileSize,StringFormat={}{0:N0}MB}" />
+                </StackPanel>
+                <!--commiting tip-->
+                <StackPanel VerticalAlignment="Center" Grid.Column="3" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbWritingToFile}" Visibility="{Binding Datasource.ConvertingStatus.IsCommittingTransaction,Converter={StaticResource VisibilityConverter},FallbackValue=Collapsed}" Foreground="Red" FontWeight="Bold" FontFamily="Verdana" />
+                </StackPanel>
+                <!--compacting tip-->
+                <StackPanel VerticalAlignment="Center" Grid.Column="3" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbDoingCompact}" Visibility="{Binding Datasource.ConvertingStatus.IsDoingCompact,Converter={StaticResource VisibilityConverter},FallbackValue=Collapsed}" Foreground="Red" FontWeight="Bold" FontFamily="Verdana" />
+                </StackPanel>
+            </Grid>
+            <!--second row-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{DynamicResource tbConvertAllLevels}" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbConvertPercent}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.CompletePercent,StringFormat=\{0:N3\}%}" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbConvertProgress}" />
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0:N0}/{1:N0}">
+                            <Binding Path="Datasource.ConvertingStatus.CompleteCount" />
+                            <Binding Path="Datasource.ConvertingStatus.TotalCount" />
+                        </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>                    
+                </StackPanel>
+                <StackPanel Grid.Column="3" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbErrorTilesCount}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.ErrorCount,StringFormat={}{0:N0}}" />
+                </StackPanel>
+            </Grid>
+            <ProgressBar Height="22" Value="{Binding Datasource.ConvertingStatus.CompletePercent,Mode=OneWay}" />
+            <!--third row-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbConvertCurrentLevel}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.Level}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbConvertPercent}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.LevelCompletePercent,StringFormat=\{0:N3\}%}" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbConvertProgress}" />
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0:N0}/{1:N0}">
+                            <Binding Path="Datasource.ConvertingStatus.LevelCompleteCount" />
+                            <Binding Path="Datasource.ConvertingStatus.LevelTotalCount" />
+                        </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>                    
+                </StackPanel>
+                <StackPanel Grid.Column="3" Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource tbErrorTilesCount}" />
+                    <TextBlock Text="{Binding Datasource.ConvertingStatus.LevelErrorCount,StringFormat={}{0:N0}}" />
+                </StackPanel>
+            </Grid>
+            <ProgressBar Height="22" Value="{Binding Datasource.ConvertingStatus.LevelCompletePercent,Mode=OneWay}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

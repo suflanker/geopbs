@@ -1,0 +1,81 @@
+﻿<Window x:Class="PBS.APP.ArcGISCacheToMBTiles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:PBS.APP.Controls"
+        Title="{DynamicResource titleArcGISCacheToMBTiles}" Height="270" Width="749" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <StackPanel Background="SkyBlue">
+                <StackPanel Margin="10,10,10,0">
+                    <!--input-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource tbDataSourcePath}" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Text="{Binding Input,Mode=TwoWay}" IsEnabled="{Binding IsIdle}" />
+                        <Button Content="{DynamicResource btnBrowse}" Grid.Column="2" Command="{Binding CMDClickBrowseButton}" CommandParameter="input" IsEnabled="{Binding IsIdle}" />
+                        <CheckBox Grid.Column="3" Content="{DynamicResource chkboxDoCompact}" IsChecked="{Binding DoCompact,Mode=OneWayToSource}" VerticalAlignment="Center" IsEnabled="{Binding IsIdle}" ToolTipService.InitialShowDelay="50" ToolTipService.ShowDuration="15000" ToolTipService.ShowOnDisabled="True">
+                            <CheckBox.ToolTip>
+                                <TextBlock Text="{DynamicResource tooltipCompact}" TextWrapping="Wrap" Width="200" />
+                            </CheckBox.ToolTip>
+                        </CheckBox>
+                    </Grid>
+                    <!--output-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="70" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource tbOutputPath}" VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1" Text="{Binding Output,Mode=TwoWay}" IsEnabled="{Binding IsIdle}" />
+                        <Button Content="{DynamicResource btnBrowse}" Grid.Column="2" Command="{Binding CMDClickBrowseButton}" CommandParameter="output" IsEnabled="{Binding IsIdle}" />
+                    </Grid>
+                    <!--name-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource tbName}" VerticalAlignment="Center" />
+                            <TextBlock Text="{DynamicResource tbOptionalByMBTiles}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBox Grid.Column="1" Text="{Binding Name,Mode=TwoWay}" IsEnabled="{Binding IsIdle}" />
+                    </Grid>
+                    <!--description-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource tbDescription}" VerticalAlignment="Center" />
+                            <TextBlock Text="{DynamicResource tbOptionalByMBTiles}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBox Grid.Column="1" Text="{Binding Description,Mode=TwoWay}" IsEnabled="{Binding IsIdle}" />
+                    </Grid>
+                    <!--attribution-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource tbAttribution}" VerticalAlignment="Center" />
+                            <TextBlock Text="{DynamicResource tbOptionalByMBTiles}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBox Grid.Column="1" Text="{Binding Attribution,Mode=TwoWay}" IsEnabled="{Binding IsIdle}" />
+                    </Grid>
+                    <Button Margin="0,5,0,5" Width="100" Content="{DynamicResource btnStart}" Command="{Binding CMDClickStartButton}" IsEnabled="{Binding IsIdle}" />
+                </StackPanel>
+            </StackPanel>
+            <!--progress-->
+            <controls:ConvertingStatus x:Name="convertingStatus1" />
+        </StackPanel>
+    </Grid>
+</Window>

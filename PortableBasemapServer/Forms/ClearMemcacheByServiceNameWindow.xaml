@@ -1,0 +1,29 @@
+﻿<Window x:Class="PBS.APP.ClearMemcacheByServiceNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource titleClearMemcache}" Height="300" Width="400" WindowStartupLocation="CenterScreen" FontFamily="Verdana">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="28" />
+        </Grid.RowDefinitions>
+        <ListBox x:Name="listboxServices" Grid.Row="0" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsChecked, Mode=TwoWay}" />
+                        <TextBlock Text="Port:" FontSize="12" />
+                        <TextBlock Text="{Binding PBSService.Port,Mode=OneWay}" FontSize="12" />
+                        <TextBlock Margin="30,0,0,0" Text="Name:" FontSize="12" />
+                        <TextBlock Text="{Binding PBSService.ServiceName,Mode=OneWay}" FontSize="12" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="28">
+            <Button x:Name="btnSelectAll" Content="{DynamicResource tbSelectAll}" Margin="0,0,30,0" Click="Button_Click" />
+            <Button x:Name="btnUnSelectAll" Content="{DynamicResource tbUnselectAll}" Margin="0,0,30,0" Click="Button_Click" />
+            <Button x:Name="btnClear" Content="{DynamicResource tbClear}" Click="Button_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

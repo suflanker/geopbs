@@ -1,0 +1,32 @@
+﻿<Window x:Class="PBS.APP.PreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+        xmlns:pbs="clr-namespace:PBS.APP.Controls"
+        Title="{DynamicResource titlePreviewWindow}" Height="600" Width="800">
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--map-->
+        <Grid x:Name="GridLeft" Grid.Column="0">
+            <esri:Map x:Name="map1" SnapToLevels="True" WrapAround="True" Progress="map1_Progress" ExtentChanged="map1_ExtentChanged" />
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="AliceBlue">
+                <TextBlock x:Name="tbZoomLevel" Text="" FontSize="16" />
+                <TextBlock x:Name="tbScale" Text="" FontSize="16" />
+                <TextBlock x:Name="tbResolution" Text="" FontSize="16" />
+                <CheckBox x:Name="chkboxDispalyGrid" Content="{DynamicResource tbDisplayGrid}" FontSize="16" Click="chkboxDispalyGrid_Click" IsChecked="False" />
+            </StackPanel>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" >                
+                <ProgressBar x:Name="progressBar1" Width="220" Height="20"  />
+                <TextBlock x:Name="tbProgress" Text="{Binding ElementName=progressBar1, Path=Value,StringFormat='{}{0}%'}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" />
+            </Grid>
+        </Grid>
+        <GridSplitter Width="5" HorizontalAlignment="Right" VerticalAlignment="Stretch" />
+        <!--service detail-->
+        <Grid x:Name="GridRight" Grid.Column="1">
+            <pbs:ServiceDetail x:Name="serviceDetail1" />
+        </Grid>
+    </Grid>
+</Window>

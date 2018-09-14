@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="PBS.APP.Controls.ServiceDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:PBS="clr-namespace:PBS.Util;assembly=PBS"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="200" FontFamily="Verdana">
+    <Grid>
+        <Grid.Resources>
+            <PBS:EnumConverter x:Key="converter1" />
+        </Grid.Resources>
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="{DynamicResource tbOutputTileCount}" Foreground="Black" Background="Silver" TextWrapping="Wrap" />
+                <TextBox x:Name="tbOutputTileCount" IsReadOnly="True" TextWrapping="Wrap">
+                    <TextBox.Text>
+                        <MultiBinding StringFormat="{}{0} ({1}/{2}/{3})" Mode="OneWay">
+                            <Binding Path="LogInfo.OutputTileCountTotal" />
+                            <Binding Path="LogInfo.OutputTileCountMemcached" />
+                            <Binding Path="LogInfo.OutputTileCountFileCache" />
+                            <Binding Path="LogInfo.OutputTileCountDynamic" />
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBlock Text="{DynamicResource tbSencondsPerTile}" Foreground="Black" Background="Silver" />
+                <TextBox x:Name="tbSPT" IsReadOnly="True" Text="{Binding LogInfo.SPT, Mode=OneWay, StringFormat=N3}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbServiceName}" Foreground="Black" Background="Silver" />
+                <TextBox x:Name="tbServiceName" IsReadOnly="True" Text="{Binding ServiceName, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbServicePort}" Background="Silver" />
+                <TextBox x:Name="tbServicePort" IsReadOnly="True" Text="{Binding Port, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbDataSourceType}" Background="Silver" />
+                <TextBox x:Name="tbDataSourceType" IsReadOnly="True" Text="{Binding DataSource.Type, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbDataSourcePath}" Background="Silver" />
+                <TextBox x:Name="tbDataSourcePath" IsReadOnly="True" Text="{Binding DataSource.Path, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbAllowMemoryCache}" Background="Silver" />
+                <TextBox x:Name="tbAllowMemCache" IsReadOnly="True" Text="{Binding AllowMemCache, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbDisableClientCache}" Background="Silver" />
+                <TextBox x:Name="tbDisableClientCache" IsReadOnly="True" Text="{Binding DisableClientCache, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbDisplayNodataTile}" Background="Silver" />
+                <TextBox x:Name="tbDisplayNodataTile" IsReadOnly="True" Text="{Binding DisplayNoDataTile, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbVisualStyle}" Background="Silver" />
+                <TextBox x:Name="tbVisualStyle" IsReadOnly="True" Text="{Binding Style, Mode=OneWay,Converter={StaticResource converter1}}" TextWrapping="Wrap" />
+                <!--tiling scheme-->
+                <TextBlock Text="{DynamicResource tbTilingScheme}" Background="Silver" FontWeight="Bold" />
+                <TextBlock Text="{DynamicResource tbPath}" Background="Silver" />
+                <TextBox x:Name="tbTSPath" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.Path, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbWKID}" Background="Silver" />
+                <TextBox x:Name="tbTSWKID" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.WKID, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbWKT}" Background="Silver" />
+                <TextBox x:Name="tbTSWKT" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.WKT, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbTileOrigin}" Background="Silver" />
+                <TextBox x:Name="tbTSTileOrigin" IsReadOnly="True" TextWrapping="Wrap">
+                    <TextBox.Text>
+                        <MultiBinding StringFormat="{}{0},{1}" Mode="OneWay">
+                            <Binding Path="DataSource.TilingScheme.TileOrigin.X" />
+                            <Binding Path="DataSource.TilingScheme.TileOrigin.Y" />
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBlock Text="{DynamicResource tbInitFullExtent}" Background="Silver" />
+                <TextBox x:Name="tbTSExtent" IsReadOnly="True" TextWrapping="Wrap">
+                    <TextBox.Text>
+                        <MultiBinding StringFormat="{}{0},{1},{2},{3}" Mode="OneWay">
+                            <Binding Path="DataSource.TilingScheme.FullExtent.XMin" />
+                            <Binding Path="DataSource.TilingScheme.FullExtent.YMin" />
+                            <Binding Path="DataSource.TilingScheme.FullExtent.XMax" />
+                            <Binding Path="DataSource.TilingScheme.FullExtent.YMax" />
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBlock Text="{DynamicResource tbDPI}" Background="Silver" />
+                <TextBox x:Name="tbTSDPI" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.DPI, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbStorageFormat}" Background="Silver" />
+                <TextBox x:Name="tbTSStorageFormat" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.StorageFormat, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbPacketSize}" Background="Silver" />
+                <TextBox x:Name="tbTSPacketSize" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.PacketSize, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbCacheTileFormat}" Background="Silver" />
+                <TextBox x:Name="tbTSCacheTileFormat" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.CacheTileFormat, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbCompressionQuality}" Background="Silver" />
+                <TextBox x:Name="tbTSCompressionQuality" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.CompressionQuality, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbTileRowsCols}" Background="Silver" />
+                <TextBox x:Name="tbTSTileColsRows" IsReadOnly="True" Text="{Binding DataSource.TilingScheme.TileRows, Mode=OneWay}" TextWrapping="Wrap" />
+                <TextBlock Text="{DynamicResource tbLOD}" Background="Silver" />
+                <TextBox x:Name="tbTSLODs" IsReadOnly="True" TextWrapping="Wrap" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

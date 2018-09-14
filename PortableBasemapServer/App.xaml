@@ -1,0 +1,17 @@
+﻿<Application x:Class="PBS.APP.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="Application_Startup"
+             Exit="Application_Exit"
+             DispatcherUnhandledException="UnhandledException">
+    <Application.Resources>
+        <!--Multilanguage in WPF：http://stackoverflow.com/questions/814600/multilanguage-in-wpf-->
+        <!--WPF 多语言实现：http://anghoo.blogbus.com/logs/62527592.html-->
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Languages/StringResources.zh-CN.xaml" />
+                <ResourceDictionary Source="Languages/StringResources.en-US.xaml" />                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

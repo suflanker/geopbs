@@ -1,0 +1,223 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--APP-->
+    <sys:String x:Key="ProcessStarted">PBS已经启动！</sys:String>
+    <sys:String x:Key="WindowsServiceStarted" xml:space="preserve">PBS服务正在运行！
+        如果你想启动程序界面，请先从Windows服务面板中停止PBS服务。</sys:String>
+    <sys:String x:Key="WindowsServiceStartError">PBS Windows服务启动错误：</sys:String>
+    <sys:String x:Key="WindowsServiceStopError">PBS Windows服务停止错误：</sys:String>
+    <sys:String x:Key="ReadLog4netConfigError">读取log4net.config文件错误！</sys:String>
+    <!--MainWindow-->
+    <!--notify icon-->
+    <sys:String x:Key="msgUsingPorts">已启用端口：</sys:String>
+    <sys:String x:Key="msgStartedServiceCount">已启动服务数量：</sys:String>
+    <!--context menu-->
+    <sys:String x:Key="cmiExit">退出</sys:String>
+    <!--menu-->
+    <sys:String x:Key="menuConfiguration">配置</sys:String>
+    <sys:String x:Key="miConfigurationFile">配置文件...</sys:String>
+    <sys:String x:Key="miLoadLastConfiguration">自动载入上次配置</sys:String>
+    <sys:String x:Key="miRunAsWindowsService">以Windows服务方式运行</sys:String>
+    <sys:String x:Key="miSetBingAPIKey">设置BingAPIKey</sys:String>
+    <sys:String x:Key="menuMemoryCacheOff">内存缓存(关闭)</sys:String>
+    <sys:String x:Key="menuMemoryCacheOn">内存缓存(开启)</sys:String>
+    <sys:String x:Key="miEnableMemCache">开启</sys:String>
+    <sys:String x:Key="miClearMemoryCache">清除...</sys:String>
+    <sys:String x:Key="menuFormatConvert">格式转换</sys:String>
+    <sys:String x:Key="miArcGISToMBTiles">ArcGIS--&gt;MBTiles...</sys:String>
+    <sys:String x:Key="miOnlineToMBTiles">在线地图--&gt;MBTiles...</sys:String>
+    <sys:String x:Key="menuAppearance">外观</sys:String>
+    <sys:String x:Key="miLanguage">English</sys:String>
+    <sys:String x:Key="miShowInSysTray">最小化至系统托盘</sys:String>
+    <sys:String x:Key="menuAbout">关于</sys:String>
+    <!--interface-->
+    <sys:String x:Key="tbDataSourceType">数据源类型:</sys:String>
+    <sys:String x:Key="btnArcGISDynamicMapServiceParams">附加参数</sys:String>
+    <sys:String x:Key="tbTilingScheme">缓存策略文件:</sys:String>
+    <sys:String x:Key="chkboxUsingGoogleTilingScheme">使用GoogleMaps缓存策略</sys:String>
+    <sys:String x:Key="tbGoogleBingAGOLTilingScheme">Google Maps/Bing Maps/ArcGIS Online缓存策略</sys:String>
+    <sys:String x:Key="tbDataSourcePath">数据源路径:</sys:String>
+    <sys:String x:Key="btnBrowse">浏览...</sys:String>
+    <sys:String x:Key="tbServicePort">服务端口:</sys:String>
+    <sys:String x:Key="tbServiceName">服务名称:</sys:String>
+    <sys:String x:Key="tbVisualStyle">视觉效果:</sys:String>
+    <sys:String x:Key="chkboxAllowMemoryCache">允许内存缓存</sys:String>
+    <sys:String x:Key="chkboxDisableClientCache">禁用客户端缓存</sys:String>
+    <sys:String x:Key="chkboxDisplayNoDataTile">显示&quot;NoData&quot;切片</sys:String>
+    <sys:String x:Key="tbLocalIPAddress">本地IP地址:&#160;</sys:String>
+    <sys:String x:Key="tbArcGISRESTURL">ArcGIS REST URL:</sys:String>
+    <sys:String x:Key="tbWMTSURL">OGC WMTS URL:</sys:String>
+    <sys:String x:Key="btnCopyArcGIS">拷贝至剪贴板</sys:String>
+    <sys:String x:Key="btnStartService">创建新服务</sys:String>
+    <sys:String x:Key="btnDeleteService">删除选中服务</sys:String>
+    <sys:String x:Key="tbDoubleClickToPreview">双击服务以在新窗口预览</sys:String>
+    <sys:String x:Key="tbArcGISDynamicMapServiceDataSourceInfo" xml:space="preserve">请在此处输入ArcGIS动态地图服务的url。每行一个服务地址，比如：
+http://domain1/ArcGIS/rest/service1/MapServer
+http://domain2/ArcGIS/rest/service1/MapServer
+http://domain3/ArcGIS/rest/service1/MapServer
+...</sys:String>
+    <sys:String x:Key="tbSelectConfxmlFile">请选择conf.xml文件</sys:String>
+    <sys:String x:Key="tbSelectSqliteFile">请选择Sqlite文件</sys:String>
+    <sys:String x:Key="tbSelectTPKFile">请选择Tile Package文件</sys:String>
+    <sys:String x:Key="tbSelectRasterFile">请选择影像文件</sys:String>
+    <!--list view-->
+    <sys:String x:Key="gvheaderServiceName">服务名称</sys:String>
+    <sys:String x:Key="gvheaderServicePort">服务端口</sys:String>
+    <sys:String x:Key="gvheaderDataSourceType">数据源类型</sys:String>
+    <sys:String x:Key="gvheaderOutputCount">输出切片数量  (内存缓存/文件缓存/动态输出)</sys:String>
+    <sys:String x:Key="gvheaderSecondPerTile">切片平均输出时间</sys:String>
+    <sys:String x:Key="gvheaderLastClientIP">最后访问的客户端IP</sys:String>
+    <!--message box-->
+    <sys:String x:Key="msgOpenPortError">无法打开端口&#160;</sys:String>
+    <sys:String x:Key="msgWarning">警告</sys:String>
+    <sys:String x:Key="msgMemcacheUnavailable">无法启用内存缓存功能</sys:String>
+    <sys:String x:Key="msgError">错误</sys:String>
+    <sys:String x:Key="msgLeavingDataSourcePathTextBoxError">你需要输入至少一个ArcGIS动态地图服务url!</sys:String>
+    <sys:String x:Key="msg_alllayersNotExist">_alllayers目录不存在!</sys:String>
+    <sys:String x:Key="msgCopyed">已拷贝至剪贴板:</sys:String>
+    <sys:String x:Key="msgDataSourcePathNotExist">数据源路径中指定的文件不存在！</sys:String>
+    <sys:String x:Key="msgServicePortInvalid">服务端口号错误!</sys:String>
+    <sys:String x:Key="msgMACExtentWarning" xml:space="preserve">数据源类型为MobileAtlasCreator，但sqlite文件中没有存储初始化范围。
+关于如何添加初始化范围，请阅读MBTile规范中关于初始化范围的说明。
+http://www.mbtiles.org
+是否现在打开说明?</sys:String>
+    <sys:String x:Key="msgGDALSRWarning" xml:space="preserve">PBS未能发现影像文件中的空间参考信息。
+请确保影像文件本身具有正确的空间参考。</sys:String>
+    <sys:String x:Key="msgOnlineMapsWarning" xml:space="preserve">警告:
+此类型数据源仅供测试，请勿用于商业用途!</sys:String>
+    <sys:String x:Key="msgDeleteServiceWarning">是否确定删除选中的服务?</sys:String>
+    <sys:String x:Key="msgSelectServiceFirst">请先选中需要删除的服务。</sys:String>
+    <sys:String x:Key="msgConfigFileBroken">PortableBasemapServer.exe.config文件损坏!</sys:String>
+    <sys:String x:Key="msgConfigFileNotExist">PortableBasemapServer.exe.config文件不存在!</sys:String>
+    <sys:String x:Key="msgExitWarning" xml:space="preserve">PBS服务仍在运行!
+是否确定直接退出?</sys:String>
+    <sys:String x:Key="msgSysTrayBalloon">双击图标还原界面。</sys:String>
+    <sys:String x:Key="msgWindowsServiceCreated">注意：下次重启机器时（即使在不登录的情况下），PBS会自动以Windows服务方式运行。目前当PBS服务正在运行时，无法启动当前UI程序界面，反之亦然。但你仍可通过PBS的REST Admin API对它进行管理。</sys:String>
+
+
+    <!--ConfigWindow-->
+    <sys:String x:Key="titleConfigWindow">配置文件</sys:String>
+    <sys:String x:Key="tbConfigName">配置名称:&#160;</sys:String>
+    <sys:String x:Key="btnSave">保存</sys:String>
+    <sys:String x:Key="btnLoad">载入</sys:String>
+    <sys:String x:Key="btnDelete">删除</sys:String>
+    <sys:String x:Key="gvheaderConfigName">配置名称</sys:String>
+    <sys:String x:Key="gvheaderServiceCount">服务数量</sys:String>
+    <sys:String x:Key="gvheaderCreatedTime">创建时间</sys:String>
+    <!--message box-->
+    <sys:String x:Key="msgConfigNameEmpty">配置名称为空！</sys:String>
+    <sys:String x:Key="msgOverwriteConfigWarning">确定要覆盖已存在的配置？</sys:String>
+    <sys:String x:Key="msgConfigNotExist" xml:space="preserve"> 配置不存在！</sys:String>
+    <sys:String x:Key="msgLoadConfigWarning" xml:space="preserve">此操作将会删除所有已发布的服务！
+是否要继续？</sys:String>
+    <sys:String x:Key="msgConfigDeleteWarning">是否确定删除配置？</sys:String>
+
+
+
+
+    <!--ClearMemcacheWindow-->
+    <sys:String x:Key="titleClearMemcache">清除内存缓存</sys:String>
+    <sys:String x:Key="tbSelectAll">全选</sys:String>
+    <sys:String x:Key="tbUnselectAll">全不选</sys:String>
+    <sys:String x:Key="tbClear">清除</sys:String>
+    <!--message box-->
+    <sys:String x:Key="msgSelectedServiceMemoryCacheCleared">选中服务的内存缓存已清除。</sys:String>
+
+
+    <!--BingApiKeyWindow-->
+    <sys:String x:Key="titleBingAPIKeyWindow">编辑Bing Maps Key</sys:String>
+    <sys:String x:Key="tbEnterBingKey">请输入你的Bing Maps API Key，以便更好地使用Bing Maps服务</sys:String>
+    <sys:String x:Key="tbObtainBingKey1">(如果没有key, 点击</sys:String>
+    <sys:String x:Key="tbObtainBingKey2">获得一个)</sys:String>
+    <sys:String x:Key="btnOK">确定</sys:String>
+    <sys:String x:Key="btnCancel">取消</sys:String>
+
+
+
+    <!--Preview Window-->
+    <sys:String x:Key="titlePreviewWindow">预览</sys:String>
+    <sys:String x:Key="tbDisplayBasemap">显示ArcGISOnline底图？</sys:String>
+    <sys:String x:Key="tbLevel">级别</sys:String>
+    <sys:String x:Key="tbScale">比例尺</sys:String>
+    <sys:String x:Key="tbResolution">分辨率</sys:String>
+    <sys:String x:Key="tbDisplayGrid">显示网格</sys:String>
+    <sys:String x:Key="tbDynamic">动态输出</sys:String>
+    <sys:String x:Key="tbMemCached">内存缓存</sys:String>
+    <sys:String x:Key="tbFileCache">文件缓存</sys:String>
+
+
+    <!--Service Detail-->
+    <sys:String x:Key="tbOutputTileCount">输出切片数量  (内存缓存/文件缓存/动态输出):</sys:String>
+    <sys:String x:Key="tbSencondsPerTile">切片平均输出时间:</sys:String>
+    <sys:String x:Key="tbAllowMemoryCache">允许内存缓存:</sys:String>
+    <sys:String x:Key="tbDisableClientCache">禁用客户端缓存:</sys:String>
+    <sys:String x:Key="tbDisplayNodataTile">显示&quot;NoData&quot;切片:</sys:String>
+    <sys:String x:Key="tbPath">路径:</sys:String>
+    <sys:String x:Key="tbWKID">WKID:</sys:String>
+    <sys:String x:Key="tbWKT">WKT:</sys:String>
+    <sys:String x:Key="tbTileOrigin">切图原点:</sys:String>
+    <sys:String x:Key="tbInitFullExtent">初始/全图范围:</sys:String>
+    <sys:String x:Key="tbDPI">DPI:</sys:String>
+    <sys:String x:Key="tbStorageFormat">存储格式:</sys:String>
+    <sys:String x:Key="tbPacketSize">Bundle包大小:</sys:String>
+    <sys:String x:Key="tbCacheTileFormat">切片图像格式:</sys:String>
+    <sys:String x:Key="tbCompressionQuality">压缩率:</sys:String>
+    <sys:String x:Key="tbTileRowsCols">切片行/列数:</sys:String>
+    <sys:String x:Key="tbLOD">Level of Details:</sys:String>
+
+    <!--DynamicMapServiceParams-->
+    <sys:String x:Key="titleDynamicMapServiceParamsWindow">ArcGIS动态地图服务参数设置</sys:String>
+    <sys:String x:Key="tbConfirmation">PBS不对此处内容进行检查，请务必确保格式及相应内容的正确性。具体请参考：</sys:String>
+    <sys:String x:Key="msgDatasourceTypeError">所选服务不是ArcGIS动态地图服务！</sys:String>
+
+
+    <!--Converting Status-->
+    <sys:String x:Key="tbConvertAllLevels">所有级别</sys:String>
+    <sys:String x:Key="tbConvertPercent">已完成:&#160;</sys:String>
+    <sys:String x:Key="tbConvertProgress">进度:&#160;</sys:String>
+    <sys:String x:Key="tbConvertCurrentLevel">当前级别:&#160;</sys:String>
+    <sys:String x:Key="tbTimeElapsed">已耗时:&#160;</sys:String>
+    <sys:String x:Key="tbTimeRemaining">剩余时间:&#160;</sys:String>
+    <sys:String x:Key="tbEstimatedSize">估计大小:&#160;</sys:String>
+    <sys:String x:Key="tbThreadCount">线程数:&#160;</sys:String>
+    <sys:String x:Key="tbWritingToFile">正在写入数据...</sys:String>
+    <sys:String x:Key="tbDoingCompact">正在压缩MBTiles...</sys:String>
+    <sys:String x:Key="tbErrorTilesCount">错误总数:&#160;</sys:String>
+
+    <!--ArcGISCacheToMBTiles-->
+    <sys:String x:Key="titleArcGISCacheToMBTiles">格式转换:ArcGIS缓存转换到MBTiles</sys:String>
+    <sys:String x:Key="tbOutputPath">输出路径:</sys:String>
+    <sys:String x:Key="tbName">名称:</sys:String>
+    <sys:String x:Key="tbDescription">内容描述:</sys:String>
+    <sys:String x:Key="tbAttribution">数据来源:</sys:String>
+    <sys:String x:Key="tbOptionalByMBTiles">(可选)</sys:String>
+    <sys:String x:Key="titleOutputPath">输出文件路径</sys:String>
+    <sys:String x:Key="btnStart">开始</sys:String>
+    <sys:String x:Key="msgOutputPathError">输出文件名错误！</sys:String>
+    <sys:String x:Key="msgCancelConvert">格式转换正在进行中，确定要取消（.mbtiles文件将会被删除）？</sys:String>
+    <sys:String x:Key="msgConvertComplete">转换成功！</sys:String>
+    <sys:String x:Key="msgOverwrite">输出文件已存在，确定要覆盖该文件吗？</sys:String>
+    <sys:String x:Key="chkboxDoCompact">压缩?</sys:String>
+    <sys:String x:Key="tooltipCompact">“压缩”是MBTiles规范的一部分。它的目的是，简单地说，去掉重复的切片以减少.mbtiles文件的体积。重复的切片是指内容完全一样的图片，通常大量出现在大比例尺下的沙漠/海洋/人烟稀少且地势平坦等地区。&#x0a;&#x0a;“压缩”的时间取决于.mbtiles文件的大小，并请确保磁盘剩余空间大于.mbtiles文件的体积。</sys:String>
+
+    <!--OnlineToMBTiles-->
+    <sys:String x:Key="titleOnlineToMBTiles">格式转换:在线地图转换（下载）到MBTiles</sys:String>
+    <sys:String x:Key="tbDownloadExtent">下载范围:&#160;</sys:String>
+    <sys:String x:Key="tbTilesCount">下载切片总数:&#160;</sys:String>
+    <sys:String x:Key="tbDrawTip">按下并拖动鼠标右键绘制下载范围</sys:String>
+    <sys:String x:Key="tbDownloadProfiles">下载方案:&#160;</sys:String>
+    <sys:String x:Key="msgDownloadProfileInvalid">下载级别或下载范围不能为空！</sys:String>
+    <sys:String x:Key="msgLoadFailed">加载失败！</sys:String>
+    <sys:String x:Key="tbDrawExtentByMouse">利用鼠标绘制</sys:String>
+    <sys:String x:Key="tbDrawByImportSHP">导入ShapeFile文件</sys:String>
+    <sys:String x:Key="tbSelectSHPFile">选择ShapeFile(WKID须为4326或3857)</sys:String>
+    <sys:String x:Key="msgSHPError">.dbf或.shp文件不存在！</sys:String>
+    <sys:String x:Key="msgSHPTypeError">ShapeFile图形类型不是Polygon！</sys:String>
+    <sys:String xml:space="preserve" x:Key="msgDownloadByPolygonIntro">按Polygon范围下载时，默认处理单位大小是4096×4096（类似ArcGIS Server的Super Tile），所以在相对大比例尺下才会看出效果。&#x0a;&#x0a;此外，类似ArcGIS Server 10.1，切片总数，下载进度，结果文件大小的估计是按矩形计算的，按Polygon区域下载时可忽略。</sys:String>
+    <sys:String x:Key="msgCompactResult">压缩结果：</sys:String>    
+    <!--DownloadLevels-->
+    <sys:String x:Key="tbDownloadLevels">下载级别:&#160;</sys:String>
+    <sys:String x:Key="btnSelectAll">全选</sys:String>
+    <sys:String x:Key="btnReverseSelect">反选</sys:String>
+</ResourceDictionary>
