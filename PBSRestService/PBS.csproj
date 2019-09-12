@@ -75,6 +75,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSource\DataSourceArcGISCacheV2.cs" />
     <Compile Include="DataSource\DataSourceAutoNaviCache.cs" />
     <Compile Include="DataSource\DataSourceCustomOnlineMaps.cs" />
     <Compile Include="DataSource\DataSourceArcGISTiledMapService.cs" />

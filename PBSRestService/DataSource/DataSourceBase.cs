@@ -1284,6 +1284,7 @@ FROM map JOIN images ON images.tile_id = map.tile_id";
         MobileAtlasCreator,
         MBTiles,
         ArcGISCache,
+        ArcGISCacheV2,
         ArcGISTilePackage,
         ArcGISDynamicMapService,
         ArcGISTiledMapService,
@@ -1336,6 +1337,7 @@ FROM map JOIN images ON images.tile_id = map.tile_id";
     {
         esriMapCacheStorageModeExploded,
         esriMapCacheStorageModeCompact,
+        esriMapCacheStorageModeCompactV2,
         unknown//ArcGISTiledMapService doesn't expose this property
     }
 

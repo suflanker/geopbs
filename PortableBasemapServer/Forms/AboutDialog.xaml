@@ -8,7 +8,7 @@
             <TextBlock TextAlignment="Center" FontSize="14" TextWrapping="Wrap">
                 <Run FontSize="16">multiple map data source&lt;--PBS--&gt;multiple map api</Run>
                 <LineBreak />                
-                <Run FontSize="16">version 3.0</Run>
+                <Run FontSize="16">version 3.2</Run>
                 <LineBreak />
                 <!--<Hyperlink NavigateUri="http://blog.newnaw.com/?p=890" RequestNavigate="Hyperlink_RequestNavigate">介绍</Hyperlink>
                 <Hyperlink NavigateUri="http://www.arcgis.com/home/item.html?id=48bf53da123e442ab8ac9aed52747552" RequestNavigate="Hyperlink_RequestNavigate">Introduction</Hyperlink>

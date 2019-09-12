@@ -68,6 +68,9 @@ namespace PBS.Service
                     case DataSourceTypePredefined.MBTiles:
                         DataSource = new DataSourceMBTiles(dataSourcePath);
                         break;
+                    case DataSourceTypePredefined.ArcGISCacheV2:
+                        DataSource = new DataSourceArcGISCacheV2(dataSourcePath);
+                        break;
                     case DataSourceTypePredefined.ArcGISCache:
                         DataSource = new DataSourceArcGISCache(dataSourcePath);
                         break;

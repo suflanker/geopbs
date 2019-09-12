@@ -542,7 +542,7 @@ namespace PBS.APP.ViewModels
             ValueVisualStyle = VisualStyles[0];
             #endregion
             #region ui text init
-            ValueDataSourcePath = @"D:\arcgisserver\directories\arcgiscache\CharlotteRaster.tpk";
+            ValueDataSourcePath = @"";
             StrMemCacheMenuHeader = Application.Current.FindResource("menuMemoryCacheOff").ToString();
             ValueTilingSchemeFilePath = Application.Current.FindResource("tbGoogleBingAGOLTilingScheme").ToString();
             ValueServicePort = AppUtility.ReadConfig("DefaultPort", "7080");
@@ -850,6 +850,18 @@ namespace PBS.APP.ViewModels
                         ValueDataSourcePath = folderBrowserDialog1.SelectedPath;
                     }
                     break;
+                case DataSourceTypePredefined.ArcGISCacheV2:
+                    System.Windows.Forms.FolderBrowserDialog folderBrowserDialog31 = new System.Windows.Forms.FolderBrowserDialog();
+                    if (folderBrowserDialog31.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (!Directory.Exists(folderBrowserDialog31.SelectedPath + @"\_alllayers"))
+                        {
+                            System.Windows.MessageBox.Show(Application.Current.FindResource("msg_alllayersNotExist").ToString());
+                            return;
+                        }
+                        ValueDataSourcePath = folderBrowserDialog31.SelectedPath;
+                    }
+                    break;
                 case DataSourceTypePredefined.AutoNaviCache:
                     System.Windows.Forms.FolderBrowserDialog folderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
                     if (folderBrowserDialog2.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -1077,6 +1089,7 @@ namespace PBS.APP.ViewModels
             if (ValueDataSourceType == DataSourceTypePredefined.MobileAtlasCreator.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.MBTiles.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.ArcGISCache.ToString() || ValueDataSourceType == DataSourceTypePredefined.AutoNaviCache.ToString() ||
+                ValueDataSourceType == DataSourceTypePredefined.ArcGISCacheV2.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.ArcGISTilePackage.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.ArcGISDynamicMapService.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.ArcGISTiledMapService.ToString() ||
@@ -1097,6 +1110,7 @@ namespace PBS.APP.ViewModels
             if (ValueDataSourceType == DataSourceTypePredefined.MobileAtlasCreator.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.MBTiles.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.ArcGISCache.ToString() ||
+                ValueDataSourceType == DataSourceTypePredefined.ArcGISCacheV2.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.AutoNaviCache.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.ArcGISTilePackage.ToString() ||
                 ValueDataSourceType == DataSourceTypePredefined.RasterImage.ToString())
